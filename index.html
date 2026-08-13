@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100 MCQ — 10-Day Study System</title>
+  <meta name="description" content="Ten daily MCQ sets, one cumulative final test. Plain HTML, CSS and JavaScript.">
+
+  <!-- Fonts: Space Grotesk (body/UI), Space Mono (labels/data), Doto (hero numbers) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@400..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <button type="button" class="brand" data-nav="home" title="Back to home">
+        <span class="brand-mark">100</span><span class="brand-unit">MCQ</span>
+      </button>
+      <nav class="nav" id="nav" aria-label="Day navigation"></nav>
+      <footer class="sidebar-foot">
+        <div class="seg" id="theme-toggle" role="group" aria-label="Theme">
+          <button type="button" class="seg-btn" data-theme-val="dark">Dark</button>
+          <button type="button" class="seg-btn" data-theme-val="light">Light</button>
+        </div>
+        <div class="label foot-meta">[ 10 days · 110 q ]</div>
+      </footer>
+    </aside>
+    <main class="main" id="app"></main>
+  </div>
+
+  <!--
+    Adding a new day is additive only:
+      1. create data/dayN.js with `const dayNQuestions = [...]; MCQ.registerDay("dayN", "Day N", dayNQuestions);`
+      2. add its <script src="data/dayN.js"></script> tag below.
+    Day 11: register the key "final" to unlock the Final Test.
+  -->
+  <script src="script.js"></script>
+  <script src="data/day1.js"></script>
+</body>
+</html>
