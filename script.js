@@ -64,7 +64,7 @@
     var out = [];
     for (var i = 1; i <= TOTAL_DAYS; i++) {
       var id = "day" + i;
-      out.push({ id: id, title: "Day " + i, data: registry[id] || null });
+      out.push({ id: id, num: i, title: "Day " + i, data: registry[id] || null });
     }
     return out;
   }
@@ -118,7 +118,7 @@
         score = '<span class="nav-score">' + st.answers.length + "/" + st.total + "</span>";
       }
       html += '<button type="button" class="' + cls + '" data-nav="' + d.id + '">' +
-        '<span class="nav-day">' + d.title + "</span>" + score + "</button>";
+        '<span class="nav-day">Day ' + pad(d.num) + "</span>" + score + "</button>";
     });
 
     html += '<div class="label nav-sec">Exam</div>';
